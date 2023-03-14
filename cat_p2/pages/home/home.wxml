@@ -1,0 +1,34 @@
+<!--pages/home/home.wxml-->
+<view class="main">
+  <!-- 轮播图 -->
+  <view class="banner">
+    <swiper interval="3000" indicator-dots="true" indicator-color="#111" indicator-active-color="#eee" autoplay="true" circular="true">
+      <swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}">
+        <image src="{{item.src}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 热点商品分类 -->
+  <view class="hot-category-floor">
+    <view class="category-floor" wx:for="{{hotCategoryList}}" wx:key="{{item.id}}">
+      <view class="floor-top">
+        <text class="hot-title">{{item.title}}</text>
+      </view>
+      <view class="floor-content">
+        <view class="floor-item big">
+          <image src="{{item.bigImgSrc}}"></image>
+        </view>
+        <view class="floor-item child" wx:for="{{item.children}}" wx:key="{{item.id}}">
+          <image src="{{item.imgSrc}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 热点商品 -->
+  <view class="hot-goods-floor">
+    <view class="good-item" style="height: {{item.height}}px;" wx:for="{{hotGoodList}}" wx:key="{{item.id}}">
+      <image src="{{item.imgSrc}}"></image>
+      <view class="good-title">{{item.title}}</view>
+    </view>
+  </view>
+</view>

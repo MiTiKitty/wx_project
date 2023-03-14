@@ -9,13 +9,13 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#14f054",
+    "navigationBarBackgroundColor": "#f2f2f2",
     "navigationBarTitleText": "喵喵购物",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#14f054",
-    "selectedColor": "#b317a7",
+    "backgroundColor": "#f2f2f2",
+    "selectedColor": "#2e2e2e",
     "borderStyle": "black",
     "list": [
       {
