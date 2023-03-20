@@ -1,0 +1,6 @@
+<!--pages/testLogin/testLogin.wxml-->
+<text>pages/testLogin/testLogin.wxml</text>
+<view wx:for="{{msg}}">
+  {{msg.content}}
+</view>
+<button bindtap="send">发送消息给服务器</button>

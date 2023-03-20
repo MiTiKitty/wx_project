@@ -14,33 +14,33 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#14f054",
-    "selectedColor": "#b317a7",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#14f054",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/tabBar/home.png",
-        "selectedIconPath": "images/tabBar/home_active.png"
+        "iconPath": "images/tabBar/home - 副本.png",
+        "selectedIconPath": "images/tabBar/home_active - 副本.png"
       },
       {
         "pagePath": "pages/category/category",
         "text": "分类",
-        "iconPath": "images/tabBar/category.png",
-        "selectedIconPath": "images/tabBar/category_active.png"
+        "iconPath": "images/tabBar/category - 副本.png",
+        "selectedIconPath": "images/tabBar/category_active - 副本.png"
       },
       {
         "pagePath": "pages/shopcar/shopcar",
         "text": "购物车",
-        "iconPath": "images/tabBar/shopcar.png",
-        "selectedIconPath": "images/tabBar/shopcar_active.png"
+        "iconPath": "images/tabBar/shopcar - 副本.png",
+        "selectedIconPath": "images/tabBar/shopcar_active - 副本.png"
       },
       {
         "pagePath": "pages/center/center",
         "text": "个人中心",
-        "iconPath": "images/tabBar/center.png",
-        "selectedIconPath": "images/tabBar/center_active.png"
+        "iconPath": "images/tabBar/center - 副本.png",
+        "selectedIconPath": "images/tabBar/center_active - 副本.png"
       }
     ]
   },

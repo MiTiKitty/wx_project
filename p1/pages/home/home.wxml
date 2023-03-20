@@ -1,2 +1,25 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="main">
+  <!-- 轮播图 -->
+  <view class="banner">
+    <swiper interval="3000" indicator-dots="true" indicator-color="#111" indicator-active-color="#eee" autoplay="true" circular="true">
+      <swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}">
+        <image src="{{item.url}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="hot-goods-floor">
+    <view class="good-item" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+      <view class="left-box">
+        <image src="{{item.poster}}"></image>
+      </view>
+      <view class="right-box">
+        <view class="line title">{{item.title}}</view>
+        <view class="line price">￥<text style="font-size: 24px;">{{item.price}}</text></view>
+        <view class="line goodcomment">好评率：{{item.goodcomment}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="none-bottom-line" wx:if="isBottom">已经到底了</view>
+</view>
