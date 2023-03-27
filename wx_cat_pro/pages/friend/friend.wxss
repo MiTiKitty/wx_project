@@ -1,0 +1,77 @@
+.main {
+  width: 750rpx;
+  padding: 10rpx 0;
+}
+
+.floor {
+  padding: 10rpx;
+}
+
+.user-item {
+  width: 730rpx;
+  height: 80rpx;
+  padding: 10rpx 0;
+  display: flex;
+}
+
+.avatar,
+.info,
+.oper {
+  display: block;
+}
+
+.avatar image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.info {
+  margin-left: 20rpx;
+  width: 400rpx;
+  height: 80rpx;
+}
+
+.nickname {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.resume {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 10px;
+  color: #5F5F5F;
+}
+
+.nickname, .resume {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.oper {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.send-btn {
+  margin-top: 20rpx;
+  width: 110rpx !important;
+  display: block;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: #F5F5F5;
+  padding: 2px 10rpx;
+  font-size: 10px;
+}
+
+.close {
+  color: red;
+  margin-left: 10rpx !important;
+}

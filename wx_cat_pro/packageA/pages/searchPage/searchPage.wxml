@@ -1,0 +1,78 @@
+<view class="main">
+  <!-- 头部搜索框 -->
+  <view class="top">
+    <view class="search-box">
+      <view class="input-box">
+        <icon class="search-icon" type="search"></icon>
+        <input class="search-input" confirm-type="search" bindtap="toSearchPage" placeholder="动动小手指" bindconfirm="handleConfirm" model:value="{{keyword}}" bindfocus="changeShow"></input>
+      </view>
+      <button class="canel-btn">取消</button>
+    </view>
+  </view>
+  <view style="height: 100rpx;"></view>
+  <!-- 历史搜索 -->
+  <block wx:if="{{show}}">
+    <view class="history-box">
+      <view class="head">
+        <view class="title">历史搜索</view>
+      </view>
+      <view class="history-content">
+        <view class="span-item" wx:for="{{historyWord}}" wx:key="h-{{index}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <!-- 最近热搜 -->
+    <view class="hot-box">
+      <view class="head">
+        <view class="title">最近热搜</view>
+      </view>
+      <view class="hot-content">
+        <view class="hot-item" wx:for="{{hotWord}}">
+          {{item}}
+          <image src="../../../images/icon/fire.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{!show}}">
+    <view class="tab-box">
+      <view class="tab-item" bindtap="changeToDynamic">
+        <text class="[{{active ? 'active' : ''}}]">动态</text>
+      </view>
+      <view class="tab-item" bindtap="changeToUser">
+        <text class="[{{active ? '' : 'active'}}]">用户</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view hidden="{{!active}}">
+      <view class="node-content up-come" wx:for="{{dynamicList}}" wx:key="dy-{{index}}">
+        <Node user="{{item.user}}" dynamic="{{item.dynamic}}" high="{{true}}"></Node>
+      </view>
+    </view>
+    <view hidden="{{active}}">
+      <view class="user-content up-come" wx:for="{{userList}}" wx:key="u-{{index}}" bindtap="gotoUserPage" data-username="{{item.username}}">
+        <view class="avatar">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="info">
+          <view class="nickname">
+            <rich-text nodes="{{item.nickname}}"></rich-text>
+          </view>
+          <view class="resume">
+            <text>{{item.resume}}</text>
+          </view>
+          <view class="likes">
+            <text>粉丝数：{{item.likeCount}}</text>
+          </view>
+        </view>
+        <view class="oper-box">
+          <button class="follow yes">+ 关注</button>
+        </view>
+      </view>
+    </view>
+    <view class="end" wx:if="{{end}}">
+      <text>—————— END ——————</text>
+    </view>
+  </block>
+</view>

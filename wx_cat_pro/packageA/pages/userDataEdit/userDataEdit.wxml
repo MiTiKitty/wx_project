@@ -1,0 +1,35 @@
+<view class="main">
+  <view class="top">
+    <view class="avatar-box">
+      <image class="avatar" src="{{users.avatar}}"></image>
+      <image class="icon-edit" src="../../../images/icon/edit-pen.png"></image>
+    </view>
+  </view>
+  <view class="floor">
+    <view class="label">昵称</view>
+    <input class="input-item" type="text" model:value="{{nickname}}" maxlength="64" />
+  </view>
+  <view class="floor" bindtap="showPopup">
+    <view class="label">性别</view>
+    <view class="span" wx:if="{{users.gender === '0'}}">神秘人</view>
+    <view class="span" wx:elif="{{users.gender === '1'}}">男</view>
+    <view class="span" wx:elif="{{users.gender === '2'}}">女</view>
+  </view>
+  <view class="floor">
+    <view class="label">签名</view>
+    <textarea cols="30" rows="10" model:value="{{resume}}" maxlength="512"></textarea>
+  </view>
+  <view class="bottom">
+    <button class="save-btn" bindtap="saveInfo">保存</button>
+  </view>
+  <!-- 呼出性别选择框 -->
+  <view class="popup" hidden="{{!show}}">
+    <view class="content">
+      <view class="choice-btn" bindtap="changeGender" data-gender="0">神秘人</view>
+      <view class="choice-btn" bindtap="changeGender" data-gender="1">男</view>
+      <view class="choice-btn" bindtap="changeGender" data-gender="2">女</view>
+      <view class="choice-btn close-btn" bindtap="hidePopup">取消</view>
+    </view>
+  </view>
+  <view class="mask" hidden="{{!show}}" bindtap="hidePopup"></view>
+</view>

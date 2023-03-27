@@ -1,0 +1,94 @@
+view {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  background-color: #F0F0F0;
+}
+
+.other-side,
+.my-side {
+  display: flex;
+  align-items: center;
+  margin: 0 20rpx 10px 20rpx;
+}
+
+.my-side {
+  justify-content: flex-end;
+}
+
+.text {
+  max-width: 500rpx;
+  padding: 10px;
+  font-size: 16px;
+  word-wrap: break-word; /* 保证单词能够被分隔 */
+  white-space: pre-wrap; /* 保留空白符，自动换行 */
+  overflow-wrap: break-word; /* 保证单词能够被分隔 */
+}
+
+.other {
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  border: 1px solid #F5F5F5;
+  float: left;
+}
+
+.my {
+  background-color: #00CED1;
+  border-radius: 10rpx;
+  border: 1px solid #F5F5F5;
+  color: #F5F5F5;
+  float: right;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.other-side .avatar {
+  float: left;
+}
+
+.my-side .avatar {
+  float: right;
+}
+
+.bottom-floor {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.input-box {
+  margin: 10rpx;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.send-input {
+  padding: 10rpx 5rpx;
+  width: 80%;
+  min-height: 60rpx !important;
+  max-height: 220rpx;
+  padding-left: 10rpx;
+}
+
+.send-btn {
+  position: absolute;
+  width: 18% !important;
+  text-align: center;
+  background-color: #00CED1;
+  padding: 0;
+  border-radius: 30rpx;
+  color: #FFFFFF;
+  right: 0;
+  bottom: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+}

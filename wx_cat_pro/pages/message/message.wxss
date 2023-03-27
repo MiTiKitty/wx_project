@@ -1,0 +1,47 @@
+.chat-item {
+  width: 730rpx;
+  height: 80rpx;
+  padding: 10rpx;
+  display: flex;
+}
+
+.avatar,
+.info {
+  display: block;
+}
+
+.avatar image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.info {
+  margin-left: 20rpx;
+  width: 400rpx;
+  height: 80rpx;
+}
+
+.nickname {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 12px;
+  color: #5F5F5F;
+}
+
+.nickname, .message {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.message text {
+  color: rgb(0, 68, 255);
+}

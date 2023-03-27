@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="editor">
+    <!-- 文本编辑器 -->
+    <textarea placeholder="请输入文字内容" model:value="{{content}}"></textarea>
+  </view>
+  <view class="uploader">
+    <view class="uploader-preview">
+      <view class="item" wx:for="{{files}}" wx:key="{{index}}">
+        <image wx:if="{{item.fileType === 'image'}}" src="{{item.tempFilePath}}" class="pre-item"></image>
+        <video wx:if="{{item.fileType === 'video'}}" src="{{item.tempFilePath}}" class="pre-item"></video>
+      </view>
+      <view class="item">
+        <image bindtap="chooseImage" src="../../images/background/plus.png" class="pre-item"></image>
+      </view>
+      <view class="last"></view>
+    </view>
+    <!-- 媒体资源上传 -->
+
+  </view>
+  <view class="submit">
+    <button class="submit-btn" bindtap="submit">发布</button>
+  </view>
+</view>

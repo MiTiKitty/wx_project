@@ -1,0 +1,10 @@
+<view class="files">
+  <view class="file-item" wx:for="{{files}}" wx:key="index">
+    <block wx:if="{{item.type === 'video'}}">
+      <video src="{{item.url}}"></video>
+    </block>
+    <block wx:else="{{item.type != 'video'}}">
+      <image src="{{item.url}}" data-url="{{item.url}}" bindtap="previewImage"></image>
+    </block>
+  </view>
+</view>

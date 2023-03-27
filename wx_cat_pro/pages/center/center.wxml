@@ -1,0 +1,61 @@
+<!--pages/center/center.wxml-->
+<view class="main">
+  <!-- 头部，展示用户头像与昵称 -->
+  <view class="head">
+    <view class="avatar">
+      <image src="{{users.avatar}}"></image>
+    </view>
+    <view class="nickname">
+      {{users.nickname}}
+      <view class="icon gender">
+        <image wx:if="{{users.gender === '0'}}" src="../../images/icon/none.png"></image>
+        <image wx:elif="{{users.gender === '1'}}" src="../../images/icon/nan.png"></image>
+        <image wx:else="{{users.gender === '2'}}" src="../../images/icon/nv.png"></image>
+      </view>
+    </view>
+    <view class="edit-avatar">
+      <button class="edit-btn" style="width: 80%;height: 30px;" bindtap="changeAvatar">
+        <view class="icon">
+          <image src="../../images/icon/edit.png"></image>
+        </view>
+        <text>更换头像</text>
+      </button>
+    </view>
+  </view>
+  <!-- 用户部分信息展示区 -->
+  <view class="floor info">
+    <view class="top">
+      <view class="span"><text>{{users.dynamicCount}}</text>动态</view>
+      <view class="span"><text>{{users.followerCount}}</text>关注</view>
+      <view class="span"><text>{{users.followeeCount}}</text>粉丝</view>
+    </view>
+    <view class="resume">
+      <text>{{users.resume}}</text>
+    </view>
+  </view>
+  <!-- 操作区，进入修改用户信息的通道 -->
+  <view class="floor operator">
+    <button class="operator-btn" bindtap="gotoUserDataEdit">编辑资料</button>
+    <button class="operator-btn" bindtap="gotoAddUser">添加好友</button>
+  </view>
+  <view class="history">
+    <view class="content">
+      <view class="card" bindtap="choiceMy">
+        <text class="[{{active ? 'active' : ''}}]">我的动态</text>
+      </view>
+      <view class="card" bindtap="choiceLikes">
+        <text class="[{{active ? '' : 'active'}}]">赞过</text>
+      </view>
+    </view>
+    <block wx:if="{{active}}">
+      <view class="node-content left-come" wx:for="{{myDynamicList.items}}" wx:key="{{item.dynamic.id}}">
+        <Node user="{{users}}" dynamic="{{item.dynamic}}"></Node>
+      </view>
+    </block>
+    <block wx:else="{{!active}}">
+      <view class="node-content right-come" wx:for="{{likes.items}}" wx:key="{{item.dynamic.id}}">
+        <Node user="{{item.user}}" dynamic="{{item.dynamic}}"></Node>
+      </view>
+    </block>
+  </view>
+</view>

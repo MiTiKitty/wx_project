@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "Node":"/components/dynamicNode/DynamicNode",
+    "Search":"/components/search/Search",
+    "mp-sticky": "@miniprogram-component-plus/sticky"
+  },
+  "onReachBottomDistance": 100,
+  "enablePullDownRefresh": true
+}

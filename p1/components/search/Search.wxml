@@ -1,0 +1,5 @@
+<!--components/search/Search.wxml-->
+<view class="search-box">
+  <icon class="search-icon" type="search" size="18"></icon>
+  <input class="search-input" placeholder="动动小手指"></input>
+</view>

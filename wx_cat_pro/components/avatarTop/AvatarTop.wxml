@@ -1,0 +1,14 @@
+<!--components/avatarTop/AvatarTop.wxml-->
+<view class="top" bindtap="gotoUserDetail">
+  <view class="avatar-node">
+    <image src="{{user.avatar}}"></image>
+  </view>
+  <view class="line">
+    <view class="nickname">
+      {{user.nickname}}
+    </view>
+    <view class="create-time-desc">
+      {{createTimeDesc}}
+    </view>
+  </view>
+</view>

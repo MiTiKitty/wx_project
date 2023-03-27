@@ -44,6 +44,14 @@
       }
     ]
   },
+  "subPackages": [
+    {
+      "root": "phone",
+      "pages": [
+        "pages/detail/detail"
+      ]
+    }
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

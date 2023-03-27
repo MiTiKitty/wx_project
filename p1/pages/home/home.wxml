@@ -8,9 +8,11 @@
       </swiper-item>
     </swiper>
   </view>
-
+  <mp-sticky offset-top="0">
+    <Search></Search>
+  </mp-sticky>
   <view class="hot-goods-floor">
-    <view class="good-item" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+    <view class="good-item" wx:for="{{goodsList}}" wx:key="{{item.id}}" bindtap="gotoDetail" data-id="{{item.id}}">
       <view class="left-box">
         <image src="{{item.poster}}"></image>
       </view>

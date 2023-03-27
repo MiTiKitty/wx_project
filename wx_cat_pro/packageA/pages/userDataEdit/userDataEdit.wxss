@@ -1,0 +1,118 @@
+.main {
+  width: 750rpx;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.top {
+  background-color: #FFFFFF;
+  position: relative;
+  height: 220rpx;
+}
+
+.avatar-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.icon-edit {
+  background-color: #FFFFFF;
+  position: absolute;
+  right: 15rpx;
+  bottom: 0;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+
+.floor {
+  display: flex;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F2F2F2;
+  padding: 10rpx 5rpx;
+  min-height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+}
+
+.label {
+  width: 20%;
+  text-indent: 0.7em;
+  color: #5F5F5F;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.save-btn {
+  width: 100% !important;
+  background-color: #00CED1;
+  color: #FFFFFF;
+  border-radius: 60rpx;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  background-color: #8F8F8F8F;
+  transition: ease-out;
+}
+
+.choice-btn {
+  text-align: center;
+  width: 100%;
+  padding: 10rpx;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.close-btn {
+  margin-top: 10rpx;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 78%;
+  background-color: #8F8F8F8F;
+  z-index: 999;
+  animation: out 200ms ease-out;
+  transition: ease-out;
+}
+
+@keyframes out {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 78%;
+  }
+}

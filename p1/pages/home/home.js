@@ -72,6 +72,13 @@ Page({
     )
   },
 
+  gotoDetail(e){
+    const {id} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/phone/pages/detail/detail?id=${id}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

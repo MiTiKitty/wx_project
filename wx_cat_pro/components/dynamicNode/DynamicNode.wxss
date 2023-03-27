@@ -1,0 +1,44 @@
+.node-box {
+  text-align: start;
+  padding: 5px;
+}
+
+.node-content {
+  text-align: left;
+}
+
+.content-node {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* 在这里设置需要显示的行数 */
+  -webkit-box-orient: vertical;
+}
+
+.node-bottom {
+  display: flex;
+  justify-content: left;
+}
+
+.span {
+  width: 25%;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+
+.text {
+  float: left;
+}
+
+.high-light {
+  font-weight: bold;
+  color: #FF318A;
+}

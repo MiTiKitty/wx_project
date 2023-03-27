@@ -1,0 +1,16 @@
+<view class="main">
+  <view class="chat-item" wx:for="{{chats}}" wx:key="m-{{index}}" bindtap="gotoChat" data-otherside="{{item.receiver.username}}" data-nickname="{{item.receiver.nickname}}">
+    <view class="avatar">
+      <image src="{{item.receiver.avatar}}"></image>
+    </view>
+    <view class="info">
+      <view class="nickname">
+        {{item.receiver.nickname}}
+      </view>
+      <view class="message">
+        {{item.createTimeDesc}}-
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>

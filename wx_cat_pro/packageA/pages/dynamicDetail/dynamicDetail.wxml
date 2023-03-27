@@ -1,0 +1,92 @@
+<view class="main">
+  <view class="box">
+    <view class="top">
+      <avatar-top user="{{sender}}" createTimeDesc="{{dynamic.createTimeDesc}}"></avatar-top>
+      <button bindtap="toFollow" wx:if="{{!follow}}" class="follow-btn">+关注</button>
+      <button bindtap="unFollow" wx:else="{{follow}}" class="follow-btn follow">已关注</button>
+    </view>
+    <view class="content">
+      <view class="head-main">
+        <text>{{dynamic.content}}</text>
+      </view>
+      <Files files="{{dynamic.files}}"></Files>
+    </view>
+  </view>
+  <view class="comment-box">
+    <view class="comment-top">
+      <view class="left-span">评论 {{dynamic.commentCount}}</view>
+      <view class="right-span">赞 {{dynamic.likeCount}}</view>
+    </view>
+    <view class="line">
+      <view class="choice-box" hidden="{{showChoice}}">
+        <view class="c-floor a">按热度</view>
+        <view class="c-line"></view>
+        <view class="c-floor">按时间</view>
+      </view>
+      <view class="triangle" hidden="{{showChoice}}"></view>
+      <text wx:if="{{sortBy}}" bindtap="changeShowChoice">按热度</text>
+      <text wx:else="{{!sortBy}}" bindtap="changeShowChoice">按时间</text>
+      <image src="../../../images/icon/sort.png"></image>
+    </view>
+    <view class="comment-item" wx:for="{{comments}}" wx:key="{{item.id}}">
+      <view class="left-avatar">
+        <image src="{{item.user.avatar}}"></image>
+      </view>
+      <view class="right-item">
+        <view class="item-nickname">{{item.user.nickname}}</view>
+        <view class="item-content">{{item.content}}</view>
+        <view class="item-info">
+          <view class="left-info">{{item.createTimeDesc}}</view>
+          <view class="left-comment" bindtap="showPopup" data-pid="{{item.id}}" data-username="{{item.user.username}}">回复</view>
+          <view class="right-info" bindtap="changeLikeByComment" data-index="{{index}}" data-pid="{{-1}}" data-id="{{item.id}}" data-like="{{item.like}}">
+            <image src="{{item.like ? '../../../images/icon/hart-active.png' : '../../../images/icon/hart.png'}}"></image>
+            <text>{{item.likeCount}}</text>
+          </view>
+        </view>
+        <block wx:if="{{item.showMore}}">
+          <view class="comment-item" wx:for="{{item.child}}" wx:for-item="node" wx:key="{{node.id}}" wx:for-index="nodeIndex">
+            <view class="left-avatar"> 
+              <image src="{{node.user.avatar}}"></image>
+            </view>
+            <view class="right-item">
+              <view class="item-nickname">{{node.user.nickname}} -> {{node.replyNickname}}</view>
+              <view class="item-content">{{node.content}}</view>
+              <view class="item-info">
+                <view class="left-info">{{node.createTimeDesc}}</view>
+                <view class="left-comment small" bindtap="showPopup" data-pid="{{node.id}}" data-username="{{node.user.username}}">回复</view>
+                <view class="right-info" bindtap="changeLikeByComment" data-index="{{nodeIndex}}" data-pid="{{index}}" data-id="{{node.id}}" data-like="{{node.like}}">
+                  <image src="{{node.like ? '../../../images/icon/hart-active.png' : '../../../images/icon/hart.png'}}"></image>
+                  <text>{{node.likeCount}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class="more" wx:if="{{item.commentsCount != 0}}" bindtap="showMore" data-pid="{{item.id}}" data-index="{{index}}" data-current="{{item.current}}" data-pagesize="{{item.pageSize}}">
+          <view class="line-span">——</view>
+          <view class="line-text">展开{{item.commentsCount}}条回复</view>
+          <view class="line-image">
+            <image src="../../../images/icon/down.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="b-span b1" bindtap="showPopup">
+      <image src="../../../images/icon/comment.png"></image>
+      <text>评论</text>
+    </view>
+    <view class="b-span b2" bindtap="changeLikeByDynamic">
+      <image src="{{dynamic.like ? '../../../images/icon/hart-active.png' : '../../../images/icon/hart.png'}}"></image>
+      <text>赞</text>
+    </view>
+  </view>
+  <view class="popup" hidden="{{!show}}">
+    <view class="input-box">
+      <textarea class="send-input" confirm-type="send" placeholder="请输入内容" model:value="{{content}}"/>
+      <button class="send-btn" bindtap="sendComments">发送</button>
+    </view>
+  </view>
+  <view class="mask" hidden="{{!show}}" bindtap="hidePopup"></view>
+</view>

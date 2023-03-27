@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Search":"/components/search/Search"
+  },
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true
+}

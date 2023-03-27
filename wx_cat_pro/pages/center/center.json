@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Node":"/components/dynamicNode/DynamicNode"
+  },
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true
+}

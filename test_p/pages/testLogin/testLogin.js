@@ -1,6 +1,5 @@
 // pages/testLogin/testLogin.js
 // 创建 WebSocket 对象，指定通信地址
-
 Page({
 
   /**
@@ -15,7 +14,7 @@ Page({
    */
   onLoad(options) {
     wx.connectSocket({
-      url: 'ws://192.168.194.110:14041/chat/msg',
+      url: 'ws://192.168.224.110:14041/chat/msg',
       header:{
         'content-type': 'application/json',
         'token': 'guxia'

@@ -1,0 +1,20 @@
+<view class="node-box">
+  <avatar-top user="{{user}}" createTimeDesc="{{dynamic.createTimeDesc}}"></avatar-top>
+  <view class="node-content">
+    <view class="content-node" bindtap="gotoDetail">
+      <rich-text wx:if="{{high}}" nodes="{{dynamic.highLightContext}}"></rich-text>
+      <text>{{dynamic.content}}</text>
+    </view>
+    <files files="{{dynamic.files}}"></files>
+  </view>
+  <view class="node-bottom">
+    <view class="span" bindtap="changeLike">
+      <image class="icon" src="{{dynamic.like ? '../../images/icon/hart-active.png' : '../../images/icon/hart.png'}}"></image>
+      <view class="text">{{dynamic.likeCount}}</view>
+    </view>
+    <view class="span" bindtap="gotoDetail">
+      <image class="icon" src="../../images/icon/comment.png"></image>
+      <view class="text">{{dynamic.commentCount}}</view>
+    </view>
+  </view>
+</view>

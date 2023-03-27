@@ -1,0 +1,25 @@
+<view class="main">
+  <Search></Search>
+  <view class="floor">
+    <text>{{total}} 位朋友</text>
+  </view>
+  <view class="floor">
+    <view class="user-item" wx:for="{{friends}}" wx:key="fri-{{index}}">
+      <view class="avatar">
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view class="info" bindtap="gotoUserPage" data-username="{{item.username}}">
+        <view class="nickname">
+          {{item.nickname}}
+        </view>
+        <view class="resume">
+          {{item.resume}}
+        </view>
+      </view>
+      <view class="oper">
+        <button class="send-btn" bindtap="gotoChat" data-otherside="{{item.username}}" data-nickname="{{item.nickname}}">发私信</button>
+        <button class="send-btn close" bindtap="unfollow" data-username="{{item.username}}">取消关注</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* components/search/Search.wxss */
+.search-box {
+  border: 1px solid #5F5F5F;
+  border-radius: 15px;
+  margin: 0 30rpx;
+  text-align: start;
+  width: 690rpx;
+}
+
+.search-icon,
+.search-input {
+  padding-left: 10px;
+  display: inline-block;
+}

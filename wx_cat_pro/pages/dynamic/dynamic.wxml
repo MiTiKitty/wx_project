@@ -1,0 +1,29 @@
+<!--pages/dynamic/dynamic.wxml-->
+<view class="main">
+  <!-- 背景图片 -->
+  <view class="background-box">
+    <image class="background-img" src="../../images/background/ch.jpg"></image>
+  </view>
+  <!-- 个人悬浮窗 -->
+  <view class="owner-box">
+    <view class="avatar">
+      <image src="{{users.avatar}}"></image>
+    </view>
+    <view class="nickname">
+      {{users.nickname}}
+    </view>
+    <view class="to-home">
+      <navigator url="/pages/center/center" open-type="switchTab">
+        <view class="span">查看我的主页</view>
+        <image class="to" src="../../images/icon/right.png"></image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 内容主体区 -->
+  <view class="content">
+    <Search></Search>
+    <view class="node-content" wx:for="{{dynamicVOList}}" wx:key="{{item.dynamic.id}}">
+      <Node user="{{item.user}}" dynamic="{{item.dynamic}}"></Node>
+    </view>
+  </view>
+</view>

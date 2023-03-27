@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "avatar-top": "/components/avatarTop/AvatarTop",
+    "Files":"/components/files/Files",
+    "mp-sticky": "@miniprogram-component-plus/sticky"
+  },
+  "navigationBarTitleText": "动态详情"
+}

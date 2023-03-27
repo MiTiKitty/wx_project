@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "avatar-top": "/components/avatarTop/AvatarTop",
+    "files":"/components/files/Files"
+  }
+}

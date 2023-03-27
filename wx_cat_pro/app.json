@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/dynamic/dynamic",
+    "pages/friend/friend",
+    "pages/issue/issue",
+    "pages/message/message",
+    "pages/center/center",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00CED1",
+    "navigationBarTitleText": "社区",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#00CED1",
+    "list": [
+      {
+        "pagePath": "pages/dynamic/dynamic",
+        "iconPath": "images/tabbar/dynamic.png",
+        "selectedIconPath": "images/tabbar/dynamic-active.png",
+        "text": "动态"
+      },
+      {
+        "pagePath": "pages/friend/friend",
+        "iconPath": "images/tabbar/friend.png",
+        "selectedIconPath": "images/tabbar/friend-active.png",
+        "text": "好友"
+      },
+      {
+        "pagePath": "pages/issue/issue",
+        "iconPath": "images/tabbar/issue.png",
+        "selectedIconPath": "images/tabbar/issue.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "images/tabbar/message.png",
+        "selectedIconPath": "images/tabbar/message-active.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "images/tabbar/center.png",
+        "selectedIconPath": "images/tabbar/center-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/chat/chat",
+        "pages/dynamicDetail/dynamicDetail",
+        "pages/userDataEdit/userDataEdit",
+        "pages/userDetail/userDetail",
+        "pages/searchPage/searchPage"
+      ]
+    }
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,22 @@
+<view class="main">
+  <view class="item" wx:for="{{chats}}" wx:key="ch-{{index}}">
+    <block wx:if="{{item.sender.username != users.username}}">
+      <view class="other-side">
+        <image src="{{item.sender.avatar}}" class="avatar"></image>
+        <view class="text other">{{item.content}}</view>
+      </view>
+    </block>
+    <block wx:elif="{{item.sender.username === users.username}}">
+      <view class="my-side">
+        <view class="text my">{{item.content}}</view>
+        <image src="{{item.sender.avatar}}" class="avatar"></image>
+      </view>
+    </block>
+  </view>
+  <view class="bottom-floor">
+    <view class="input-box">
+      <textarea class="send-input" auto-height	confirm-type="send" placeholder="请输入内容" model:value="{{content}}"/>
+      <button class="send-btn" bindtap="sendMessage">发送</button>
+    </view>
+  </view>
+</view>

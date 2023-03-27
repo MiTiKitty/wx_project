@@ -1,0 +1,302 @@
+.main {
+  height: 100vh;
+  background-color: #F5F5F5;
+  padding-top: 15rpx;
+}
+
+.box {
+  padding: 20rpx 10rpx;
+  background-color: #FFFFFF;
+}
+
+.top {
+  position: relative;
+}
+
+.follow-btn {
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  font-size: 18rpx;
+  width: 80rpx !important;
+  padding: 10rpx;
+  border: 1px solid #00CED1;
+  border-radius: 30rpx;
+}
+
+.follow {
+  border-color: #F5F5F5;
+  color: #00CED1;
+}
+
+.content {
+  padding-top: 10rpx;
+  text-align: start;
+}
+
+.head-main {
+  text-indent: 1.2em;
+}
+
+.comment-box {
+  margin: 20rpx 0rpx;
+  padding: 10rpx;
+  background-color: #FFFFFF;
+  padding-bottom: 100rpx;
+}
+
+.comment-top {
+  height: 50rpx;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.left-span, 
+.right-span {
+  height: 100%;
+  line-height: 50rpx;
+  font-size: 14px;
+}
+
+.left-span {
+  float: left;
+  margin-left: 15rpx;
+}
+
+.right-span {
+  float: right;
+  margin-right: 15rpx;
+}
+
+.line {
+  position: relative;
+  height: 20rpx;
+}
+
+.line image {
+  width: 20rpx;
+  height: 20rpx;
+  float: right;
+}
+
+.line text {
+  font-size: 10px;
+  color: #00CED1;
+  float: right;
+}
+
+.choice-box {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -118rpx;
+  width: 150rpx;
+  background-color: #E8E8E8;
+  color: #000000;
+}
+
+.triangle {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: -10rpx;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #E8E8E8;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+
+.a {
+  color: 	#7700ff;
+}
+
+.c-floor {
+  padding: 15rpx;
+  font-size: 10px;
+}
+
+.c-line {
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.w {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.comment-item {
+  position: relative;
+  display: flex;
+  margin: 15rpx 0;
+}
+
+.left-avatar {
+  width: 70rpx;
+}
+
+.left-avatar image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+
+.right-item {
+  padding-left: 10rpx;
+}
+
+.item-nickname {
+  font-size: 10px;
+  color: #7700ff;
+}
+
+.item-content {
+  font-size: 12px;
+}
+
+.item-info {
+  padding: 5rpx;
+  font-size: 10px;
+  color: #9c9c9c;
+  display: flex;
+}
+
+.left-info {
+  margin-right: 50rpx;
+}
+
+.left-comment {
+  color: #303030;
+  margin-right: 250rpx;
+}
+
+.small {
+  margin-right: 170rpx;
+}
+
+.right-info {
+  display: flex;
+}
+
+.right-info image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+}
+
+.more {
+  margin-top: 10rpx;
+  display: flex;
+  font-size: 10px;
+}
+
+.line-span {
+  color: #5E5E5E;
+  padding-right: 10rpx;
+}
+
+.line-image image {
+  margin-top: 5rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+}
+
+.b-span {
+  width: 50%;
+  padding: 15rpx;
+  text-align: center;
+  font-size: 12px;
+}
+
+.b-span image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}
+
+.b1 {
+  border-right: 1px solid #cccccc;
+}
+
+.b2 {
+  border-left: 1px solid #cccccc;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 22%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box {
+  width: 100%;
+  height: 100%;
+  margin: 10rpx;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.send-input {
+  padding: 10rpx 5rpx;
+  width: 80%;
+  height: 100%;
+  padding-left: 10rpx;
+}
+
+.send-btn {
+  position: absolute;
+  width: 18% !important;
+  text-align: center;
+  background-color: #00CED1;
+  padding: 0;
+  border-radius: 30rpx;
+  color: #FFFFFF;
+  right: 0;
+  bottom: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 78%;
+  background-color: #e6e6e68f;
+  z-index: 999;
+  animation: out 200ms ease-out;
+  transition: ease-out;
+}
+
+@keyframes out {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 78%;
+  }
+}

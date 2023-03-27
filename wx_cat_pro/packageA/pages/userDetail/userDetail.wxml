@@ -1,0 +1,40 @@
+<view class="main">
+  <view class="head-floor">
+    <view class="head">
+      <view class="avatar">
+        <image src="{{users.avatar}}"></image>
+        <view class="icon gender">
+          <image wx:if="{{users.gender === '0'}}" src="../../../images/icon/none.png"></image>
+          <image wx:elif="{{users.gender === '1'}}" src="../../../images/icon/nan.png"></image>
+          <image wx:else="{{users.gender === '2'}}" src="../../../images/icon/nv.png"></image>
+        </view>
+      </view>
+      <view class="info">
+        <view class="nickname">{{users.nickname}}</view>
+        <view class="info-top">
+          <view class="span"><text>{{users.dynamicCount}}</text>动态</view>
+          <view class="span"><text>{{users.followerCount}}</text>关注</view>
+          <view class="span"><text>{{users.followeeCount}}</text>粉丝</view>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+  <!-- 用户签名 -->
+  <view class="floor">
+    <view class="card">
+      <text>{{users.resume}}</text>
+    </view>
+  </view>
+  <view class="floor-content">
+    <view class="node-item" wx:for="{{dynamicList}}" wx:key="index">
+      <Node user="{{users}}" dynamic="{{item.dynamic}}"></Node>
+    </view>
+  </view>
+  <!-- 结束标志 -->
+  <view class="end">———— END ————</view>
+  <view class="bottom">
+    <view class="span-item" wx:if="{{users.isFollow}}">发私信</view>
+    <view class="span-item" bindtap="follow" wx:else="{{!users.isFollow}}">+关注</view>
+  </view>
+</view>
