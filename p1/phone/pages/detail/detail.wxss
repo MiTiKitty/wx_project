@@ -48,6 +48,7 @@ image {
 }
 
 .choice-box {
+  width: 750rpx;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -72,6 +73,7 @@ image {
 .span-item {
   padding: 5px;
   margin: 5px auto;
+  margin-top: 0;
 }
 
 .btn-1 {

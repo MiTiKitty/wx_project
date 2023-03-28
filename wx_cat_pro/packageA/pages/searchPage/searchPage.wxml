@@ -6,7 +6,7 @@
         <icon class="search-icon" type="search"></icon>
         <input class="search-input" confirm-type="search" bindtap="toSearchPage" placeholder="动动小手指" bindconfirm="handleConfirm" model:value="{{keyword}}" bindfocus="changeShow"></input>
       </view>
-      <button class="canel-btn">取消</button>
+      <button class="canel-btn" bindtap="quit">取消</button>
     </view>
   </view>
   <view style="height: 100rpx;"></view>
@@ -17,7 +17,7 @@
         <view class="title">历史搜索</view>
       </view>
       <view class="history-content">
-        <view class="span-item" wx:for="{{historyWord}}" wx:key="h-{{index}}">
+        <view class="span-item" wx:for="{{historyWord}}" wx:key="h-{{index}}" bindtap="changeKeyword" data-keyword="{{item}}">
           {{item}}
         </view>
       </view>
@@ -28,7 +28,7 @@
         <view class="title">最近热搜</view>
       </view>
       <view class="hot-content">
-        <view class="hot-item" wx:for="{{hotWord}}">
+        <view class="hot-item" wx:for="{{hotWord}}" bindtap="changeKeyword" data-keyword="{{item}}">
           {{item}}
           <image src="../../../images/icon/fire.png"></image>
         </view>
@@ -47,7 +47,7 @@
     <view class="line"></view>
     <view hidden="{{!active}}">
       <view class="node-content up-come" wx:for="{{dynamicList}}" wx:key="dy-{{index}}">
-        <Node user="{{item.user}}" dynamic="{{item.dynamic}}" high="{{true}}"></Node>
+        <Node user="{{item.user}}" dynamic="{{item.dynamic}}" high="{{true}}" highLightContext="{{item.highLightContext}}"></Node>
       </view>
     </view>
     <view hidden="{{active}}">

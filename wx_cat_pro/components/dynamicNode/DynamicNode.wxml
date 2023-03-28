@@ -2,8 +2,8 @@
   <avatar-top user="{{user}}" createTimeDesc="{{dynamic.createTimeDesc}}"></avatar-top>
   <view class="node-content">
     <view class="content-node" bindtap="gotoDetail">
-      <rich-text wx:if="{{high}}" nodes="{{dynamic.highLightContext}}"></rich-text>
-      <text>{{dynamic.content}}</text>
+      <rich-text wx:if="{{high}}" nodes="{{highLightContext}}"></rich-text>
+      <text wx:else="{{!high}}">{{dynamic.content}}</text>
     </view>
     <files files="{{dynamic.files}}"></files>
   </view>

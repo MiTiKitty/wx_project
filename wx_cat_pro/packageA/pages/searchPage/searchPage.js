@@ -5,6 +5,24 @@ import {
   reqSearchUsersByKeyword
 } from '../../../api/request'
 
+let history = wx.getStorageSync('history') || [];
+
+function updateHistory(keyword) {
+  var index = history.indexOf(keyword);
+
+  if (index !== -1) {
+    // 如果该关键词已经存在于历史搜索记录中，则将其移到最前面
+    history.splice(index, 1);
+  } else if (history.length >= 10) {
+    // 如果历史搜索记录已经满了，则删除最后一个记录
+    history.pop();
+  }
+
+  // 将新搜索的关键词添加到历史搜索记录最前面
+  history.unshift(keyword);
+  wx.setStorageSync('history', history);
+}
+
 Page({
 
   /**
@@ -12,7 +30,7 @@ Page({
    */
   data: {
     // 最近的历史搜索关键词
-    historyWord: [],
+    historyWord: history,
     // 搜索热词
     hotWord: [],
     keyword: '',
@@ -27,44 +45,8 @@ Page({
       total: 0
     },
     dynamicList: [], // highLightContext{高亮显示文本}
-    userList: [{
-      username: 'lili',
-      nickname: "<font class='high-light'>丽丽</font>",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    },{
-      username: 'lili4',
-      nickname: "我是<font class='high-light'>丽丽</font>的衣服",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    },{
-      username: 'lili3',
-      nickname: "<font class='high-light'>丽丽</font>牛逼",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    },{
-      username: 'lili2',
-      nickname: "<font class='high-light'>丽丽</font>哇",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    },{
-      username: 'lili1',
-      nickname: "<font class='high-light'>丽丽</font>早上好",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    },{
-      username: 'li-li',
-      nickname: "<font class='high-light'>丽丽</font>晚上好",
-      avatar: 'https://p.qqan.com/up/2018-5/2018050810410773085.jpg',
-      resume: '这是个人签名部分',
-      likeCount: 19
-    }],
-    end: true // 是否到底部了
+    userList: [],
+    end: false // 是否到底部了
   },
 
   handleConfirm(e) {
@@ -72,13 +54,58 @@ Page({
       show: false
     })
     var keyword = e.detail.value;
-
+    this.searchDynamic(keyword)
+    this.searchUsers(keyword)
     // 更新搜索记录
     updateHistory(keyword);
   },
 
-  searchDynamic(){
+  searchDynamic(keyword){
+    const {dy, dynamicList} = this.data
+    reqSearchDynamicByKeyword({
+      data: {
+        keyword: keyword,
+        current: dy.current,
+        pageSize: 8
+      },
+      success: res => {
+        this.setData({
+          'dy.current': res.current,
+          'dy.total': res.total,
+          dynamicList: [...dynamicList, ...res.data]
+        })
+      }
+    })
+  },
 
+  searchUsers(keyword){
+    const {us, userList} = this.data
+    reqSearchUsersByKeyword({
+      data: {
+        keyword: keyword,
+        current: us.current,
+        pageSize: 8
+      },
+      success: res => {
+        this.setData({
+          'us.current': res.current,
+          'us.total': res.total,
+          userList: [...userList, ...res.data]
+        })
+      }
+    })
+  },
+
+  changeKeyword(e){
+    const {keyword} = e.currentTarget.dataset
+    this.setData({
+      keyword: keyword,
+      show: false
+    })
+    this.searchDynamic(keyword)
+    this.searchUsers(keyword)
+    // 更新搜索记录
+    updateHistory(keyword);
   },
 
   changeShow(){
@@ -107,7 +134,17 @@ Page({
   },
 
   searchHotKeyWord(){
-    
+    reqHotSearchKeyword({
+      success: res => {
+        this.setData({
+          hotWord: res.data
+        })
+      }
+    })
+  },
+
+  quit(){
+    wx.navigateBack()
   },
 
   /**
@@ -117,6 +154,7 @@ Page({
     this.setData({
       history: history
     });
+    this.searchHotKeyWord()
   },
 
   /**

@@ -26,4 +26,7 @@
       <Node user="{{item.user}}" dynamic="{{item.dynamic}}"></Node>
     </view>
   </view>
+  <view class="end" wx:if="{{end}}">
+    <text>——————END——————</text>
+  </view>
 </view>

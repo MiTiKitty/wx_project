@@ -1,5 +1,10 @@
 // pages/home/home.js
-import {get, post, put, deleteQ} from '../../api/requests'
+import {
+  get,
+  post,
+  put,
+  deleteQ
+} from '../../api/requests'
 
 Page({
 
@@ -7,8 +12,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bannerList:[],
-    goodsList:[],
+    bannerList: [],
+    goodsList: [],
     pageNo: 1,
     pageSize: 8,
     loadGoods: false,
@@ -19,7 +24,7 @@ Page({
   /**
    * 获得推荐列表
    */
-  getBannerList(){
+  getBannerList() {
     get('/goods/recommends').then(
       res => {
         this.setData({
@@ -35,8 +40,13 @@ Page({
   /**
    * 获得商品列表
    */
-  getGoodsList(){
-    const {pageNo, pageSize, goodsList, loadGoods} = this.data
+  getGoodsList() {
+    const {
+      pageNo,
+      pageSize,
+      goodsList,
+      loadGoods
+    } = this.data
     if (loadGoods) {
       return
     }
@@ -72,8 +82,10 @@ Page({
     )
   },
 
-  gotoDetail(e){
-    const {id} = e.currentTarget.dataset
+  gotoDetail(e) {
+    const {
+      id
+    } = e.currentTarget.dataset
     wx.navigateTo({
       url: `/phone/pages/detail/detail?id=${id}`,
     })
@@ -119,7 +131,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    
+    this.setData({
+      bannerList: [],
+      goodsList: [],
+      pageNo: 1,
+      total: 0
+    })
+    this.getBannerList()
+    this.getGoodsList()
   },
 
   /**

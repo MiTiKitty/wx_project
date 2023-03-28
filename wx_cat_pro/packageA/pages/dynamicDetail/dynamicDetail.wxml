@@ -53,7 +53,7 @@
               <view class="item-content">{{node.content}}</view>
               <view class="item-info">
                 <view class="left-info">{{node.createTimeDesc}}</view>
-                <view class="left-comment small" bindtap="showPopup" data-pid="{{node.id}}" data-username="{{node.user.username}}">回复</view>
+                <view class="left-comment" bindtap="showPopup" data-pid="{{node.id}}" data-username="{{node.user.username}}">回复</view>
                 <view class="right-info" bindtap="changeLikeByComment" data-index="{{nodeIndex}}" data-pid="{{index}}" data-id="{{node.id}}" data-like="{{node.like}}">
                   <image src="{{node.like ? '../../../images/icon/hart-active.png' : '../../../images/icon/hart.png'}}"></image>
                   <text>{{node.likeCount}}</text>

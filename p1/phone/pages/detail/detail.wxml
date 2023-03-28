@@ -34,10 +34,12 @@
       </view>
     </view>
   </view>
-  <view class="choice-box">
-    <view class="['span-item',{{active ? 'active' : ''}}]" bindtap="changeDesc">详情</view>
-    <view class="['span-item',{{active ? '' : 'active'}}]" bindtap="changeComments">评论</view>
-  </view>
+  <mp-sticky offset-top="0">
+    <view class="choice-box">
+      <view class="['span-item', {{active ? 'active' : ''}}]" bindtap="changeDesc">详情</view>
+      <view class="['span-item', {{active ? '' : 'active'}}]" bindtap="changeComments">评论</view>
+    </view>
+  </mp-sticky>
   <!-- 内容展示区 -->
   <view class="content-floor">
     <!-- 详情图片展示区 -->

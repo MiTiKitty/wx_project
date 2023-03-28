@@ -11,7 +11,8 @@ Page({
   data: {
     users: null,
     dynamicVOList: [],
-    current: 1
+    current: 1,
+    end: false
   },
 
   /**
@@ -20,15 +21,25 @@ Page({
   getDynamicList() {
     const {
       current,
-      dynamicVOList
+      dynamicVOList,
+      end
     } = this.data
+    if (end) {
+      return
+    }
     reqDynamicList({
       current: current,
       success: res => {
         this.setData({
-          current: current,
+          current: res.current,
           dynamicVOList: [...dynamicVOList, ...res.data]
         })
+        if (current === res.current) {
+          this.setData({
+            end: true
+          })
+          return
+        }
       }
     })
   },
@@ -76,7 +87,8 @@ Page({
   onPullDownRefresh() {
     this.setData({
       dynamicVOList: [],
-      current: 1
+      current: 1,
+      end: false
     })
     this.getDynamicList()
     this.setData({
@@ -88,7 +100,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    this.getDynamicList()
   },
 
   /**

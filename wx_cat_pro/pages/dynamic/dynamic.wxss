@@ -75,3 +75,9 @@
   margin-top: 10px;
   border-bottom: 1px solid #F0F0F0;
 }
+
+.end {
+  padding: 15rpx 0;
+  color: #ac08de;
+  text-align: center;
+}

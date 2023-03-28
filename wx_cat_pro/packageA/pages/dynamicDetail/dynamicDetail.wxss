@@ -145,6 +145,7 @@
 }
 
 .right-item {
+  width: 680rpx;
   padding-left: 10rpx;
 }
 
@@ -158,27 +159,28 @@
 }
 
 .item-info {
+  width: 100%;
   padding: 5rpx;
   font-size: 10px;
   color: #9c9c9c;
   display: flex;
+  position: relative;
 }
 
 .left-info {
+  float: left;
   margin-right: 50rpx;
 }
 
 .left-comment {
+  float: left;
   color: #303030;
-  margin-right: 250rpx;
-}
-
-.small {
-  margin-right: 170rpx;
 }
 
 .right-info {
-  display: flex;
+  width: 100rpx;
+  position: absolute;
+  right: 20rpx;
 }
 
 .right-info image {

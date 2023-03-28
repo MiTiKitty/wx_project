@@ -7,8 +7,8 @@ Component({
   options: {
     styleIsolation: 'isolated'
   },
-  lifetimes:{
-    attached(){
+  lifetimes: {
+    attached() {
       const files = this.getDynamicFiles()
       this.setData({
         showFiles: files,
@@ -26,6 +26,10 @@ Component({
     high: {
       type: Boolean,
       value: false
+    },
+    highLightContext: {
+      type: String,
+      value: ''
     }
   },
 
@@ -33,7 +37,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showFiles:[],
+    showFiles: [],
     dynamic: {},
   },
 
@@ -42,19 +46,23 @@ Component({
    */
   methods: {
     getDynamicFiles() {
-      return this.properties.dynamic.files.slice(0, 9)
+      if (this.properties.dynamic.files) {
+        return this.properties.dynamic.files.slice(0, 9)
+      }
     },
-    getDynamic(){
+    getDynamic() {
       return this.properties.dynamic
     },
-    gotoDetail(){
+    gotoDetail() {
       const id = this.data.dynamic.id
       wx.navigateTo({
         url: `/packageA/pages/dynamicDetail/dynamicDetail?id=${id}`,
       })
     },
-    changeLike(){
-      const {dynamic} = this.data
+    changeLike() {
+      const {
+        dynamic
+      } = this.data
       const like = !dynamic.like
       const num = dynamic.like ? -1 : 1
       this.setData({
