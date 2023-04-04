@@ -20,6 +20,11 @@ Component({
   methods: {
     handlerTop() {
       this.triggerEvent("hello")
+    },
+    gotoSearch(){
+      wx.navigateTo({
+        url: '../../phone/pages/search/search',
+      })
     }
   }
 })

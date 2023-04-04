@@ -1,0 +1,70 @@
+/* phone/pages/searchList/searchList.wxss */
+view{
+  box-sizing: border-box;
+}
+
+.main {
+  width: 750rpx;
+}
+
+.top-sort {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  text-align: center;
+}
+
+.span {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+
+.text {
+  text-indent: 2em;
+}
+
+.icon {
+  margin-top: -7rpx;
+  width: 50rpx;
+  height: 50rpx;
+  padding: 10rpx;
+}
+
+.icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.floor {
+  width: 750rpx;
+}
+
+.item {
+  border: 1px solid #23234a;
+  width: 375rpx;
+  float: left;
+  margin-bottom: 10px;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 12px;
+}
+
+.top image {
+  min-height: 200px;
+  width: 100%;
+}
+
+.content {
+  padding: 15rpx;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item text {
+  padding: 10rpx;
+}

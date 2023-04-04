@@ -1,0 +1,12 @@
+<view class="main">
+  <mp-searchbar search="{{search}}" model:value="{{keyword}}" ext-class="search">
+  </mp-searchbar>
+  <view class="floor">
+    <view class="type-item type" wx:for="{{typeList}}" bindtap="gotoSearchList" data-typeid="{{item.id}}" data-type="{{item.title}}">
+      <text style="color: red;">{{item.title}}-{{item.className}}</text>
+    </view>
+    <view class="type-item" wx:for="{{goodsList}}" bindtap="gotoDesc" data-id="{{item.id}}">
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>

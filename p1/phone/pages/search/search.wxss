@@ -1,0 +1,54 @@
+view {
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: #FFFFFF;
+  padding: 0 5rpx;
+}
+
+.search {
+  display: flex;
+  padding: 5px;
+}
+
+.weui-search-bar__form{
+  width: 100%;
+  display: flex;
+}
+
+.weui-search-bar__label {
+  width: 15%;
+  background-color: #d9d9d9;
+  border-radius: 5rpx;
+}
+
+.weui-search-bar__box {
+  display: flex;
+  width: 85%;
+  border: 1px solid #313131;
+}
+
+.weui-search-bar__input {
+  padding: 2rpx;
+}
+
+.weui-search-bar__text {
+  text-align: center;
+  padding: 5rpx 15rpx;
+}
+
+.floor {
+
+}
+
+.type-item {
+  border: 1px solid #cccccc;
+  padding: 5rpx;
+  text-indent: 1.2em;
+}
+
+.type {
+  text-indent: 2em;
+  font-weight: bold;
+}

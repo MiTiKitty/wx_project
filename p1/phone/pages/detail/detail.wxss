@@ -72,22 +72,17 @@ image {
 
 .span-item {
   padding: 5px;
-  margin: 5px auto;
-  margin-top: 0;
+  margin: 0 auto;
+  width: 50%;
+  color: #FFFFFF;
 }
 
 .btn-1 {
-  border-radius: 20px;
-  width: 200rpx;
   background-color: rgb(240, 142, 14);
-  color: #FFFFFF;
 }
 
 .btn-2 {
-  border-radius: 20px;
-  width: 200rpx;
   background-color: rgb(240, 14, 14);
-  color: #FFFFFF;
 }
 
 .active {

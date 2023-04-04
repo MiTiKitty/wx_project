@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@miniprogram-component-plus/sticky": "^1.0.1"
+    "@miniprogram-component-plus/sticky": "^1.0.1",
+    "weui-miniprogram": "^1.2.7"
   }
 }

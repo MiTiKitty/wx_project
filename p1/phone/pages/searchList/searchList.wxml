@@ -1,0 +1,34 @@
+<view class="main">
+  <view class="top-sort">
+    <view class="span">
+      <view class="text">价格排序</view>
+      <view class="icon">
+        <image src="../../../images/icon/refresh.png" bindtap="priceSort"></image>
+      </view>
+    </view>
+    <view class="span">
+      <view class="text">好评排序</view>
+      <view class="icon" bindtap="goodSort">
+        <image src="../../../images/icon/refresh.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="floor">
+    <view class="item" wx:for="{{itemList}}" bindtap="gotoDetail" data-id="{{item.id}}">
+      <view class="top">
+        <image src="{{item.poster}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="price">
+          价格：<text style="color: red;">￥{{item.price}}</text>
+        </view>
+        <view class="type">
+          好评率：<text style="color: red;">{{item.goodcomment}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
